@@ -33,6 +33,7 @@ int Population::propagateUntilOut(PersonPosn start_person, double prob_spread, R
    // queima a floresta at� terminar o fogo
    count = 0;
    while (isPropagating()) {
+
       propagate(prob_spread, r);
       count++;
    }

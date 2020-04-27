@@ -1,0 +1,215 @@
+Sequencial
+Size pop = 40 N trials = 500 N probs = 100
+Elapsed time in milliseconds : 26890 ms
+Elapsed time in seconds : 26 s
+
+----------------------------------------------------------------------------------
+
+
+Parallel 1
+Num threads = 2 Schedule = DYNAMIC Chunk = 250
+Size pop = 40 N trials = 500 N probs = 100
+Elapsed time in milliseconds : 26360 ms
+Elapsed time in seconds : 26 s
+
+----------------------------------------------------------------------------------
+
+
+Parallel 1
+Num threads = 4 Schedule = DYNAMIC Chunk = 250
+Size pop = 40 N trials = 500 N probs = 100
+Elapsed time in milliseconds : 29847 ms
+Elapsed time in seconds : 29 s
+
+----------------------------------------------------------------------------------
+
+
+Parallel 1
+Num threads = 6 Schedule = DYNAMIC Chunk = 250
+Size pop = 40 N trials = 500 N probs = 100
+Elapsed time in milliseconds : 23545 ms
+Elapsed time in seconds : 23 s
+
+----------------------------------------------------------------------------------
+
+
+Sequencial
+Size pop = 40 N trials = 2500 N probs = 100
+Elapsed time in milliseconds : 144520 ms
+Elapsed time in seconds : 144 s
+
+----------------------------------------------------------------------------------
+
+
+Parallel 1
+Num threads = 2 Schedule = DYNAMIC Chunk = 1250
+Size pop = 40 N trials = 2500 N probs = 100
+Elapsed time in milliseconds : 135237 ms
+Elapsed time in seconds : 135 s
+
+----------------------------------------------------------------------------------
+
+
+Parallel 1
+Num threads = 4 Schedule = DYNAMIC Chunk = 1250
+Size pop = 40 N trials = 2500 N probs = 100
+Elapsed time in milliseconds : 115181 ms
+Elapsed time in seconds : 115 s
+
+----------------------------------------------------------------------------------
+
+
+Parallel 1
+Num threads = 6 Schedule = DYNAMIC Chunk = 1250
+Size pop = 40 N trials = 2500 N probs = 100
+Elapsed time in milliseconds : 114203 ms
+Elapsed time in seconds : 114 s
+
+----------------------------------------------------------------------------------
+
+
+Sequencial
+Size pop = 40 N trials = 12500 N probs = 100
+Elapsed time in milliseconds : 642707 ms
+Elapsed time in seconds : 642 s
+
+----------------------------------------------------------------------------------
+
+
+Parallel 1
+Num threads = 2 Schedule = DYNAMIC Chunk = 6250
+Size pop = 40 N trials = 12500 N probs = 100
+Elapsed time in milliseconds : 569866 ms
+Elapsed time in seconds : 569 s
+
+----------------------------------------------------------------------------------
+
+
+Parallel 1
+Num threads = 4 Schedule = DYNAMIC Chunk = 6250
+Size pop = 40 N trials = 12500 N probs = 100
+Elapsed time in milliseconds : 564597 ms
+Elapsed time in seconds : 564 s
+
+----------------------------------------------------------------------------------
+
+
+Parallel 1
+Num threads = 6 Schedule = DYNAMIC Chunk = 6250
+Size pop = 40 N trials = 12500 N probs = 100
+Elapsed time in milliseconds : 566457 ms
+Elapsed time in seconds : 566 s
+
+----------------------------------------------------------------------------------
+Sequencial
+Size pop = 50 N trials = 100 N probs = 100
+Elapsed time in milliseconds : 8979 ms
+Elapsed time in seconds : 8 s
+
+----------------------------------------------------------------------------------
+
+
+Parallel 2
+
+Num threads = 2 Schedule = DYNAMIC Chunk = 50
+Size pop = 50 N trials = 100 N probs = 100
+Elapsed time in milliseconds : 8371 ms
+Elapsed time in seconds : 8 s
+
+----------------------------------------------------------------------------------
+
+
+Parallel 2
+
+Num threads = 4 Schedule = DYNAMIC Chunk = 25
+Size pop = 50 N trials = 100 N probs = 100
+Elapsed time in milliseconds : 9543 ms
+Elapsed time in seconds : 9 s
+
+----------------------------------------------------------------------------------
+
+
+Parallel 2
+
+Num threads = 6 Schedule = DYNAMIC Chunk = 16
+Size pop = 50 N trials = 100 N probs = 100
+Elapsed time in milliseconds : 10413 ms
+Elapsed time in seconds : 10 s
+
+----------------------------------------------------------------------------------
+
+
+Sequencial
+Size pop = 100 N trials = 100 N probs = 100
+Elapsed time in milliseconds : 67137 ms
+Elapsed time in seconds : 67 s
+
+----------------------------------------------------------------------------------
+
+
+Parallel 2
+
+Num threads = 2 Schedule = DYNAMIC Chunk = 50
+Size pop = 100 N trials = 100 N probs = 100
+Elapsed time in milliseconds : 49410 ms
+Elapsed time in seconds : 49 s
+
+----------------------------------------------------------------------------------
+
+
+Parallel 2
+
+Num threads = 4 Schedule = DYNAMIC Chunk = 25
+Size pop = 100 N trials = 100 N probs = 100
+Elapsed time in milliseconds : 42737 ms
+Elapsed time in seconds : 42 s
+
+----------------------------------------------------------------------------------
+
+
+Parallel 2
+
+Num threads = 6 Schedule = DYNAMIC Chunk = 16
+Size pop = 100 N trials = 100 N probs = 100
+Elapsed time in milliseconds : 44537 ms
+Elapsed time in seconds : 44 s
+
+----------------------------------------------------------------------------------
+
+
+Sequencial
+Size pop = 150 N trials = 100 N probs = 100
+Elapsed time in milliseconds : 209944 ms
+Elapsed time in seconds : 209 s
+
+----------------------------------------------------------------------------------
+
+
+Parallel 2
+
+Num threads = 2 Schedule = DYNAMIC Chunk = 50
+Size pop = 150 N trials = 100 N probs = 100
+Elapsed time in milliseconds : 148494 ms
+Elapsed time in seconds : 148 s
+
+----------------------------------------------------------------------------------
+
+
+Parallel 2
+
+Num threads = 4 Schedule = DYNAMIC Chunk = 25
+Size pop = 150 N trials = 100 N probs = 100
+Elapsed time in milliseconds : 118532 ms
+Elapsed time in seconds : 118 s
+
+----------------------------------------------------------------------------------
+
+
+Parallel 2
+
+Num threads = 6 Schedule = DYNAMIC Chunk = 16
+Size pop = 150 N trials = 100 N probs = 100
+Elapsed time in milliseconds : 116425 ms
+Elapsed time in seconds : 116 s
+
+----------------------------------------------------------------------------------

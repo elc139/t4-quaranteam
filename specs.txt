@@ -1,0 +1,5 @@
+Processador: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz (Virtual Machine -> 2 Cores - 4 Threads)
+
+OS: Ubuntu 19.04 (Oracle VM Virtual Box)
+
+Memória: 4096 MB

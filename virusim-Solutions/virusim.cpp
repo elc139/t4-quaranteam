@@ -96,7 +96,6 @@ void solution1(int population_size, int n_probs, int n_trials, int n_threads){
       percent_infected[ip] = 0.0;
 
       rand.setSeed(base_seed+ip); // nova seq��ncia de n�meros aleat�rios
-
       #pragma omp parallel for num_threads(n_threads) schedule(runtime)
       for (int it = 0; it < n_trials; it++) {
           int pop_id = omp_get_thread_num();
@@ -106,13 +105,13 @@ void solution1(int population_size, int n_probs, int n_trials, int n_threads){
 
       percent_infected[ip] /= n_trials;
       printf("%lf, %lf\n", prob_spread[ip], percent_infected[ip]);
-    }
+  }
 
-    delete[] prob_spread;
-    delete[] percent_infected;
+  delete[] prob_spread;
+  delete[] percent_infected;
 
-    for(auto pops: populations)
-      delete pops;
+  for(auto pops: populations)
+    delete pops;
 }
 
 
@@ -132,21 +131,22 @@ void solution2(int population_size, int n_probs, int n_trials, int n_threads){
 
   #pragma omp parallel for num_threads(n_threads) schedule(runtime)
   for (int ip = 0; ip < n_probs; ip++) {
-
+      int pop_id = omp_get_thread_num();
       prob_spread[ip] = prob_min + (double) ip * prob_step;
       percent_infected[ip] = 0.0;
 
       rand.setSeed(base_seed+ip); // nova seq��ncia de n�meros aleat�rios
 
       for (int it = 0; it < n_trials; it++) {
-        int pop_id = omp_get_thread_num();
         populations[pop_id]->propagateUntilOut(populations[pop_id]->centralPerson(), prob_spread[ip], rand);
         percent_infected[ip] += populations[pop_id]->getPercentInfected();
       }
 
       percent_infected[ip] /= n_trials;
-      printf("%lf, %lf\n", prob_spread[ip], percent_infected[ip]);
+      printf("%lf, %lf    thread id = %d\n", prob_spread[ip], percent_infected[ip], pop_id);
   }
+
+
 
   delete[] prob_spread;
   delete[] percent_infected;
@@ -166,13 +166,13 @@ int run_program(std::ofstream& fileOutput, Solution solution,  int population_si
               func = std::bind(sequencial, population_size, n_probs, n_trials);
       break;
     case S1:  fileOutput<<"Parallel 1  "<<"\n";
-              sched_t = omp_sched_static;
+              sched_t = omp_sched_dynamic;
               ck = n_trials/2;
               func = std::bind(solution1, population_size, n_probs, n_trials, n_threads);
       break;
     case S2:  fileOutput<<"Parallel 2 "<<"\n\n";
               sched_t = omp_sched_dynamic;
-              ck = n_trials/2;
+              ck = n_probs/n_threads;
               func = std::bind(solution2, population_size, n_probs, n_trials, n_threads);
       break;
   }
@@ -207,8 +207,8 @@ int run_program(std::ofstream& fileOutput, Solution solution,  int population_si
 }
 
 int test_solution1(std::ofstream& fileOutput){
-  int population_size = 30;
-  int n_trials = 100;
+  int population_size = 40;
+  int n_trials = 500;
   int n_probs = 100;
   int n_threads = 2;
   int result = 0;
@@ -217,7 +217,7 @@ int test_solution1(std::ofstream& fileOutput){
     if(i%3==0){
       n_threads = 2;
       if(i>0)
-        n_trials*=10;
+        n_trials*=5;
 
       result = run_program(fileOutput, static_cast<Solution>(0), population_size,n_probs,  n_trials, n_threads);
 
@@ -240,7 +240,7 @@ int test_solution1(std::ofstream& fileOutput){
 }
 
 int test_solution2(std::ofstream& fileOutput){
-  int population_size = 30;
+  int population_size = 50;
   int n_trials = 100;
   int n_probs = 100;
   int n_threads = 2;
@@ -250,8 +250,7 @@ int test_solution2(std::ofstream& fileOutput){
     if(i%3==0){
       n_threads = 2;
       if(i>0){
-        n_trials*=2;
-        population_size*=2;
+        population_size+=50;
       }
 
       result = run_program(fileOutput,SEQ, population_size,n_probs,  n_trials, n_threads);
@@ -280,13 +279,12 @@ int test_solution2(std::ofstream& fileOutput){
 int main(int argc, char* argv[]){
 
    std::ofstream fileOutput("../results.txt", std::ios::out | std::ios::trunc);
-   omp_set_nested(1);
    omp_set_dynamic(0);
 
-   //int result = test_solution1(fileOutput);
-   //if(result) return 1;
+   int result = test_solution1(fileOutput);
+   if(result) return 1;
 
-   int result = test_solution2(fileOutput);
+   result = test_solution2(fileOutput);
    if(result) return 1;
 
    fileOutput.close();
