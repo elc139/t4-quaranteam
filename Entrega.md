@@ -6,9 +6,9 @@
 ***
 ### Código: 
 
-[virusimSolution](test_dir)
+[Código](https://github.com/elc139/t4-quaranteam/tree/master/virusim-Solutions)
 
 ***
 ### Slides: 
 
-[virusimSolution](test_dir)
+[Slides](https://github.com/elc139/t4-quaranteam/blob/master/Slides%20-%20Trabalho%204%20.pdf)
